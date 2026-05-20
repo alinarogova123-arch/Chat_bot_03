@@ -21,7 +21,7 @@ def get_answer(user_id, redis_db, quiz_questions, messenger_article):
 
 
 def get_quiz_questions():
-    with open("quiz-questions/1vs1200.txt", "r", encoding="KOI8-R") as my_file:
+    with open("/opt/Chat_bot_03/quiz-questions/1vs1200.txt", "r", encoding="KOI8-R") as my_file:
         file_contents = my_file.read()
     paragraphs = file_contents.split("\n\n")
     quiz_questions = {}
