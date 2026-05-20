@@ -36,8 +36,7 @@ def run_bot(bot, redis_db, quiz_questions, messenger_article):
         redis_db.set(f"{messenger_article}{message.from_user.id}", question_number)
         bot.send_message(message.chat.id, question)
     
-        
-    
+           
     @bot.message_handler(func=lambda message: True)
     def handle_solution_attempt(message):
         answer = get_answer(message.from_user.id, redis_db, quiz_questions, messenger_article)

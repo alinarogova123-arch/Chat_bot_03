@@ -4,7 +4,7 @@ import redis
 
 
 def get_question_and_question_number(quiz_questions):
-    question_number = str(random.randint(1,48))
+    question_number = str(random.randint(1,len(quiz_questions)))
     question_and_answer = quiz_questions.get(question_number)
     question = question_and_answer.get("question")
 
