@@ -55,11 +55,12 @@ def main():
     env = Env()
     env.read_env()
     messenger_article = "tg-"
+    path_to_questons_file = env.str("PATH_TO_QUESTIONS_FILE")
     db_name = env.str("REDIS_DB")
     db_port = env.str("REDIS_DB_PORT")
     db_password = env.str("REDIS_DB_PASSWORD")
     tg_bot_token = env.str("TELEGRAM_BOT_API_KEY")
-    quiz_questions = get_quiz_questions()
+    quiz_questions = get_quiz_questions(path_to_questons_file)
     redis_db = connect_to_redis_db(db_name, db_port, db_password)
     bot = telebot.TeleBot(tg_bot_token)
     run_bot(bot, redis_db, quiz_questions, messenger_article)
